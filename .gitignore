@@ -1,3 +1,4 @@
 /older/
 *.zip
-config.php
+*.log
+/config.php

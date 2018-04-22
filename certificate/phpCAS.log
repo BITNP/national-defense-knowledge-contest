@@ -1,0 +1,1770 @@
+E32E .START (2018-04-22 13:45:25) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E32E .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+E32E .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E32E .|    |    Session is not authenticated [Client.php:938]
+E32E .|    <= ''
+E32E .<= ''
+E32E .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+E32E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E32E .<= ''
+E32E .=> phpCAS::forceAuthentication() [auth.php:11]
+E32E .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E32E .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E32E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E32E .|    |    |    |    no user found [Client.php:1635]
+E32E .|    |    |    <= false
+E32E .|    |    |    no ticket found [Client.php:1494]
+E32E .|    |    <= false
+E32E .|    |    => CAS_Client::redirectToCas(false) [Client.php:1289]
+E32E .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1656]
+E32E .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+E32E .|    |    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+E32E .|    |    |    |    <= 'http://localhost/gf/certificate/'
+E32E .|    |    |    <= 'https://login.bit.edu.cn/devcas/login?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F'
+E32E .|    |    |    Redirect to : https://login.bit.edu.cn/devcas/login?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F [Client.php:1663]
+E32E .|    |    |    exit()
+E32E .|    |    |    -
+E32E .|    |    -
+E32E .|    -
+50C7 .START (2018-04-22 13:45:35) phpCAS-1.3.5+ ****************** [CAS.php:468]
+50C7 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+50C7 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+50C7 .|    |    Session is not authenticated [Client.php:938]
+50C7 .|    |    Ticket 'ST-7429-g3PUSaWSbEUKJQe69EHM-cas01.example.org' found [Client.php:1020]
+50C7 .|    <= ''
+50C7 .<= ''
+50C7 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+50C7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+50C7 .<= ''
+50C7 .=> phpCAS::forceAuthentication() [auth.php:11]
+50C7 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+50C7 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+50C7 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+50C7 .|    |    |    |    no user found [Client.php:1635]
+50C7 .|    |    |    <= false
+50C7 .|    |    |    CAS 2.0 ticket `ST-7429-g3PUSaWSbEUKJQe69EHM-cas01.example.org' is present [Client.php:1447]
+50C7 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL, false) [Client.php:1450]
+50C7 .|    |    |    |     [Client.php:3169]
+50C7 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3176]
+50C7 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+50C7 .|    |    |    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+50C7 .|    |    |    |    |    <= 'http://localhost/gf/certificate/'
+50C7 .|    |    |    |    <= 'https://login.bit.edu.cn/devcas/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F'
+50C7 .|    |    |    |    => CAS_Client::_readURL('https://login.bit.edu.cn/devcas/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F&ticket=ST-7429-g3PUSaWSbEUKJQe69EHM-cas01.example.org', NULL, NULL, NULL) [Client.php:3191]
+50C7 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+50C7 .|    |    |    |    |    |    Response Body: 
+50C7 .|    |    |    |    |    |    
+50C7 .|    |    |    |    |    |    
+50C7 .|    |    |    |    |    |    
+50C7 .|    |    |    |    |    |    
+50C7 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+50C7 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+50C7 .|    |    |    |    |    |    		<cas:user>123</cas:user>
+50C7 .|    |    |    |    |    |    
+50C7 .|    |    |    |    |    |    
+50C7 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+50C7 .|    |    |    |    |    |    </cas:serviceResponse>
+50C7 .|    |    |    |    |    |     [CurlRequest.php:84]
+50C7 .|    |    |    |    |    <= true
+50C7 .|    |    |    |    <= true
+50C7 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3261]
+50C7 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:3376]
+50C7 .|    |    |    |    <= ''
+50C7 .|    |    |    |    Storing Proxy List [Client.php:3270]
+50C7 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3273]
+50C7 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+50C7 .|    |    |    |    <= true
+50C7 .|    |    |    |    => CAS_Client::_renameSession('ST-7429-g3PUSaWSbEUKJQe69EHM-cas01.example.org') [Client.php:3293]
+50C7 .|    |    |    |    |    Killing session: ujc0fconl5qcp6crdo7t042ii4 [Client.php:3682]
+50C7 .|    |    |    |    |    Starting session: 391dc6b441c1728f4386e38c2096e65265b2d429e5cd6514513680f6d10d1abb [Client.php:3686]
+50C7 .|    |    |    |    |    Restoring old session vars [Client.php:3689]
+50C7 .|    |    |    |    <= ''
+50C7 .|    |    |    <= true
+50C7 .|    |    |    CAS 2.0 ticket `ST-7429-g3PUSaWSbEUKJQe69EHM-cas01.example.org' was validated [Client.php:1453]
+50C7 .|    |    |    => CAS_Client::getURL() [Client.php:1518]
+50C7 .|    |    |    <= 'http://localhost/gf/certificate/'
+50C7 .|    |    |    Prepare redirect to : http://localhost/gf/certificate/ [Client.php:1518]
+50C7 .|    |    |    => CAS_Client::getURL() [Client.php:1520]
+50C7 .|    |    |    <= 'http://localhost/gf/certificate/'
+50C7 .|    |    |    exit()
+50C7 .|    |    |    -
+50C7 .|    |    -
+50C7 .|    -
+02CE .START (2018-04-22 13:45:36) phpCAS-1.3.5+ ****************** [CAS.php:468]
+02CE .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+02CE .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+02CE .|    |    Session is authenticated as: 123 [Client.php:936]
+02CE .|    <= ''
+02CE .<= ''
+02CE .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+02CE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+02CE .<= ''
+02CE .=> phpCAS::forceAuthentication() [auth.php:11]
+02CE .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+02CE .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+02CE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+02CE .|    |    |    |    user = `123' [Client.php:1622]
+02CE .|    |    |    <= true
+02CE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+02CE .|    |    <= true
+02CE .|    |    no need to authenticate [Client.php:1282]
+02CE .|    <= true
+02CE .<= ''
+B781 .START (2018-04-22 14:12:20) phpCAS-1.3.5+ ****************** [CAS.php:468]
+B781 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+B781 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+B781 .|    |    Session is authenticated as: 123 [Client.php:936]
+B781 .|    <= ''
+B781 .<= ''
+B781 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+B781 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+B781 .<= ''
+B781 .=> phpCAS::forceAuthentication() [auth.php:11]
+B781 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+B781 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+B781 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+B781 .|    |    |    |    user = `123' [Client.php:1622]
+B781 .|    |    |    <= true
+B781 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+B781 .|    |    <= true
+B781 .|    |    no need to authenticate [Client.php:1282]
+B781 .|    <= true
+B781 .<= ''
+65EA .START (2018-04-22 14:12:28) phpCAS-1.3.5+ ****************** [CAS.php:468]
+65EA .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+65EA .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+65EA .|    |    Session is authenticated as: 123 [Client.php:936]
+65EA .|    <= ''
+65EA .<= ''
+65EA .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+65EA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+65EA .<= ''
+65EA .=> phpCAS::forceAuthentication() [auth.php:11]
+65EA .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+65EA .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+65EA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+65EA .|    |    |    |    user = `123' [Client.php:1622]
+65EA .|    |    |    <= true
+65EA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+65EA .|    |    <= true
+65EA .|    |    no need to authenticate [Client.php:1282]
+65EA .|    <= true
+65EA .<= ''
+AAB1 .START (2018-04-22 14:12:36) phpCAS-1.3.5+ ****************** [CAS.php:468]
+AAB1 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+AAB1 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+AAB1 .|    |    Session is authenticated as: 123 [Client.php:936]
+AAB1 .|    <= ''
+AAB1 .<= ''
+AAB1 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+AAB1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+AAB1 .<= ''
+AAB1 .=> phpCAS::forceAuthentication() [auth.php:11]
+AAB1 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+AAB1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+AAB1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+AAB1 .|    |    |    |    user = `123' [Client.php:1622]
+AAB1 .|    |    |    <= true
+AAB1 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+AAB1 .|    |    <= true
+AAB1 .|    |    no need to authenticate [Client.php:1282]
+AAB1 .|    <= true
+AAB1 .<= ''
+43A3 .START (2018-04-22 14:12:49) phpCAS-1.3.5+ ****************** [CAS.php:468]
+43A3 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+43A3 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+43A3 .|    |    Session is authenticated as: 123 [Client.php:936]
+43A3 .|    <= ''
+43A3 .<= ''
+43A3 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+43A3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+43A3 .<= ''
+43A3 .=> phpCAS::forceAuthentication() [auth.php:11]
+43A3 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+43A3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+43A3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+43A3 .|    |    |    |    user = `123' [Client.php:1622]
+43A3 .|    |    |    <= true
+43A3 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+43A3 .|    |    <= true
+43A3 .|    |    no need to authenticate [Client.php:1282]
+43A3 .|    <= true
+43A3 .<= ''
+D6A1 .START (2018-04-22 14:31:12) phpCAS-1.3.5+ ****************** [CAS.php:468]
+D6A1 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+D6A1 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+D6A1 .|    |    Session is authenticated as: 123 [Client.php:936]
+D6A1 .|    <= ''
+D6A1 .<= ''
+D6A1 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+D6A1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+D6A1 .<= ''
+D6A1 .=> phpCAS::forceAuthentication() [auth.php:12]
+D6A1 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+D6A1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+D6A1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+D6A1 .|    |    |    |    user = `123' [Client.php:1622]
+D6A1 .|    |    |    <= true
+D6A1 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+D6A1 .|    |    <= true
+D6A1 .|    |    no need to authenticate [Client.php:1282]
+D6A1 .|    <= true
+D6A1 .<= ''
+59C0 .START (2018-04-22 14:31:15) phpCAS-1.3.5+ ****************** [CAS.php:468]
+59C0 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+59C0 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+59C0 .|    |    Session is authenticated as: 123 [Client.php:936]
+59C0 .|    <= ''
+59C0 .<= ''
+59C0 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+59C0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+59C0 .<= ''
+59C0 .=> phpCAS::forceAuthentication() [auth.php:12]
+59C0 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+59C0 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+59C0 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+59C0 .|    |    |    |    user = `123' [Client.php:1622]
+59C0 .|    |    |    <= true
+59C0 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+59C0 .|    |    <= true
+59C0 .|    |    no need to authenticate [Client.php:1282]
+59C0 .|    <= true
+59C0 .<= ''
+790A .START (2018-04-22 14:31:29) phpCAS-1.3.5+ ****************** [CAS.php:468]
+790A .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+790A .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+790A .|    |    Session is authenticated as: 123 [Client.php:936]
+790A .|    <= ''
+790A .<= ''
+790A .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+790A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+790A .<= ''
+790A .=> phpCAS::forceAuthentication() [auth.php:12]
+790A .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+790A .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+790A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+790A .|    |    |    |    user = `123' [Client.php:1622]
+790A .|    |    |    <= true
+790A .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+790A .|    |    <= true
+790A .|    |    no need to authenticate [Client.php:1282]
+790A .|    <= true
+790A .<= ''
+7FD9 .START (2018-04-22 14:33:45) phpCAS-1.3.5+ ****************** [CAS.php:468]
+7FD9 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+7FD9 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+7FD9 .|    |    Session is authenticated as: 123 [Client.php:936]
+7FD9 .|    <= ''
+7FD9 .<= ''
+7FD9 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+7FD9 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+7FD9 .<= ''
+7FD9 .=> phpCAS::forceAuthentication() [auth.php:12]
+7FD9 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+7FD9 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+7FD9 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+7FD9 .|    |    |    |    user = `123' [Client.php:1622]
+7FD9 .|    |    |    <= true
+7FD9 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+7FD9 .|    |    <= true
+7FD9 .|    |    no need to authenticate [Client.php:1282]
+7FD9 .|    <= true
+7FD9 .<= ''
+3464 .START (2018-04-22 14:33:47) phpCAS-1.3.5+ ****************** [CAS.php:468]
+3464 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+3464 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+3464 .|    |    Session is authenticated as: 123 [Client.php:936]
+3464 .|    <= ''
+3464 .<= ''
+3464 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+3464 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+3464 .<= ''
+3464 .=> phpCAS::forceAuthentication() [auth.php:12]
+3464 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+3464 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+3464 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+3464 .|    |    |    |    user = `123' [Client.php:1622]
+3464 .|    |    |    <= true
+3464 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+3464 .|    |    <= true
+3464 .|    |    no need to authenticate [Client.php:1282]
+3464 .|    <= true
+3464 .<= ''
+1B7C .START (2018-04-22 14:34:40) phpCAS-1.3.5+ ****************** [CAS.php:468]
+1B7C .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+1B7C .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+1B7C .|    |    Session is authenticated as: 123 [Client.php:936]
+1B7C .|    <= ''
+1B7C .<= ''
+1B7C .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+1B7C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+1B7C .<= ''
+1B7C .=> phpCAS::forceAuthentication() [auth.php:12]
+1B7C .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+1B7C .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+1B7C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+1B7C .|    |    |    |    user = `123' [Client.php:1622]
+1B7C .|    |    |    <= true
+1B7C .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+1B7C .|    |    <= true
+1B7C .|    |    no need to authenticate [Client.php:1282]
+1B7C .|    <= true
+1B7C .<= ''
+E2D3 .START (2018-04-22 14:34:41) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E2D3 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+E2D3 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E2D3 .|    |    Session is authenticated as: 123 [Client.php:936]
+E2D3 .|    <= ''
+E2D3 .<= ''
+E2D3 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+E2D3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E2D3 .<= ''
+E2D3 .=> phpCAS::forceAuthentication() [auth.php:12]
+E2D3 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E2D3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E2D3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E2D3 .|    |    |    |    user = `123' [Client.php:1622]
+E2D3 .|    |    |    <= true
+E2D3 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+E2D3 .|    |    <= true
+E2D3 .|    |    no need to authenticate [Client.php:1282]
+E2D3 .|    <= true
+E2D3 .<= ''
+2AAA .START (2018-04-22 14:34:43) phpCAS-1.3.5+ ****************** [CAS.php:468]
+2AAA .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+2AAA .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+2AAA .|    |    Session is authenticated as: 123 [Client.php:936]
+2AAA .|    <= ''
+2AAA .<= ''
+2AAA .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+2AAA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+2AAA .<= ''
+2AAA .=> phpCAS::forceAuthentication() [auth.php:12]
+2AAA .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+2AAA .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+2AAA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+2AAA .|    |    |    |    user = `123' [Client.php:1622]
+2AAA .|    |    |    <= true
+2AAA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+2AAA .|    |    <= true
+2AAA .|    |    no need to authenticate [Client.php:1282]
+2AAA .|    <= true
+2AAA .<= ''
+7638 .START (2018-04-22 14:34:58) phpCAS-1.3.5+ ****************** [CAS.php:468]
+7638 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+7638 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+7638 .|    |    Session is authenticated as: 123 [Client.php:936]
+7638 .|    <= ''
+7638 .<= ''
+7638 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+7638 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+7638 .<= ''
+7638 .=> phpCAS::forceAuthentication() [auth.php:12]
+7638 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+7638 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+7638 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+7638 .|    |    |    |    user = `123' [Client.php:1622]
+7638 .|    |    |    <= true
+7638 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+7638 .|    |    <= true
+7638 .|    |    no need to authenticate [Client.php:1282]
+7638 .|    <= true
+7638 .<= ''
+47D3 .START (2018-04-22 14:35:03) phpCAS-1.3.5+ ****************** [CAS.php:468]
+47D3 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+47D3 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+47D3 .|    |    Session is authenticated as: 123 [Client.php:936]
+47D3 .|    <= ''
+47D3 .<= ''
+47D3 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+47D3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+47D3 .<= ''
+47D3 .=> phpCAS::forceAuthentication() [auth.php:12]
+47D3 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+47D3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+47D3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+47D3 .|    |    |    |    user = `123' [Client.php:1622]
+47D3 .|    |    |    <= true
+47D3 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+47D3 .|    |    <= true
+47D3 .|    |    no need to authenticate [Client.php:1282]
+47D3 .|    <= true
+47D3 .<= ''
+B6C8 .START (2018-04-22 14:35:20) phpCAS-1.3.5+ ****************** [CAS.php:468]
+B6C8 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+B6C8 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+B6C8 .|    |    Session is authenticated as: 123 [Client.php:936]
+B6C8 .|    |    Ticket 'ST-7430-ZGC1u75kQ2KtVSZd9Wnc-cas01.example.org' found [Client.php:1020]
+B6C8 .|    <= ''
+B6C8 .<= ''
+B6C8 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+B6C8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+B6C8 .<= ''
+B6C8 .=> phpCAS::forceAuthentication() [auth.php:12]
+B6C8 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+B6C8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+B6C8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+B6C8 .|    |    |    |    user = `123' [Client.php:1622]
+B6C8 .|    |    |    <= true
+B6C8 .|    |    |    ticket was present and will be discarded, use renewAuthenticate() [Client.php:1398]
+B6C8 .|    |    |    => CAS_Client::getURL() [Client.php:1400]
+B6C8 .|    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+B6C8 .|    |    |    <= 'http://localhost/gf/certificate/'
+B6C8 .|    |    |    Prepare redirect to : http://localhost/gf/certificate/ [Client.php:1400]
+B6C8 .|    |    |    => CAS_Client::getURL() [Client.php:1402]
+B6C8 .|    |    |    <= 'http://localhost/gf/certificate/'
+B6C8 .|    |    |    exit()
+B6C8 .|    |    |    -
+B6C8 .|    |    -
+B6C8 .|    -
+F592 .START (2018-04-22 14:35:20) phpCAS-1.3.5+ ****************** [CAS.php:468]
+F592 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+F592 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+F592 .|    |    Session is authenticated as: 123 [Client.php:936]
+F592 .|    <= ''
+F592 .<= ''
+F592 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+F592 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+F592 .<= ''
+F592 .=> phpCAS::forceAuthentication() [auth.php:12]
+F592 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+F592 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+F592 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+F592 .|    |    |    |    user = `123' [Client.php:1622]
+F592 .|    |    |    <= true
+F592 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+F592 .|    |    <= true
+F592 .|    |    no need to authenticate [Client.php:1282]
+F592 .|    <= true
+F592 .<= ''
+E882 .START (2018-04-22 14:35:40) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E882 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+E882 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E882 .|    |    Session is authenticated as: 123 [Client.php:936]
+E882 .|    <= ''
+E882 .<= ''
+E882 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+E882 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E882 .<= ''
+E882 .=> phpCAS::forceAuthentication() [auth.php:12]
+E882 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E882 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E882 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E882 .|    |    |    |    user = `123' [Client.php:1622]
+E882 .|    |    |    <= true
+E882 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+E882 .|    |    <= true
+E882 .|    |    no need to authenticate [Client.php:1282]
+E882 .|    <= true
+E882 .<= ''
+AED7 .START (2018-04-22 14:35:46) phpCAS-1.3.5+ ****************** [CAS.php:468]
+AED7 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+AED7 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+AED7 .|    |    Session is authenticated as: 123 [Client.php:936]
+AED7 .|    <= ''
+AED7 .<= ''
+AED7 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+AED7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+AED7 .<= ''
+AED7 .=> phpCAS::forceAuthentication() [auth.php:12]
+AED7 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+AED7 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+AED7 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+AED7 .|    |    |    |    user = `123' [Client.php:1622]
+AED7 .|    |    |    <= true
+AED7 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+AED7 .|    |    <= true
+AED7 .|    |    no need to authenticate [Client.php:1282]
+AED7 .|    <= true
+AED7 .<= ''
+85BB .START (2018-04-22 14:36:55) phpCAS-1.3.5+ ****************** [CAS.php:468]
+85BB .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+85BB .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+85BB .|    |    Session is authenticated as: 123 [Client.php:936]
+85BB .|    <= ''
+85BB .<= ''
+85BB .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+85BB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+85BB .<= ''
+85BB .=> phpCAS::forceAuthentication() [auth.php:12]
+85BB .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+85BB .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+85BB .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+85BB .|    |    |    |    user = `123' [Client.php:1622]
+85BB .|    |    |    <= true
+85BB .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+85BB .|    |    <= true
+85BB .|    |    no need to authenticate [Client.php:1282]
+85BB .|    <= true
+85BB .<= ''
+0C2C .START (2018-04-22 14:36:57) phpCAS-1.3.5+ ****************** [CAS.php:468]
+0C2C .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+0C2C .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+0C2C .|    |    Session is authenticated as: 123 [Client.php:936]
+0C2C .|    <= ''
+0C2C .<= ''
+0C2C .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+0C2C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+0C2C .<= ''
+0C2C .=> phpCAS::forceAuthentication() [auth.php:12]
+0C2C .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+0C2C .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+0C2C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+0C2C .|    |    |    |    user = `123' [Client.php:1622]
+0C2C .|    |    |    <= true
+0C2C .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+0C2C .|    |    <= true
+0C2C .|    |    no need to authenticate [Client.php:1282]
+0C2C .|    <= true
+0C2C .<= ''
+E499 .START (2018-04-22 14:37:04) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E499 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:10]
+E499 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E499 .|    |    Session is authenticated as: 123 [Client.php:936]
+E499 .|    <= ''
+E499 .<= ''
+E499 .=> phpCAS::setNoCasServerValidation() [auth.php:11]
+E499 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E499 .<= ''
+E499 .=> phpCAS::forceAuthentication() [auth.php:12]
+E499 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E499 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E499 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E499 .|    |    |    |    user = `123' [Client.php:1622]
+E499 .|    |    |    <= true
+E499 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+E499 .|    |    <= true
+E499 .|    |    no need to authenticate [Client.php:1282]
+E499 .|    <= true
+E499 .<= ''
+1F7D .START (2018-04-22 14:43:31) phpCAS-1.3.5+ ****************** [CAS.php:468]
+1F7D .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+1F7D .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+1F7D .|    |    Session is authenticated as: 123 [Client.php:936]
+1F7D .|    <= ''
+1F7D .<= ''
+1F7D .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+1F7D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+1F7D .<= ''
+1F7D .=> phpCAS::forceAuthentication() [auth.php:11]
+1F7D .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+1F7D .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+1F7D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+1F7D .|    |    |    |    user = `123' [Client.php:1622]
+1F7D .|    |    |    <= true
+1F7D .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+1F7D .|    |    <= true
+1F7D .|    |    no need to authenticate [Client.php:1282]
+1F7D .|    <= true
+1F7D .<= ''
+8F8E .START (2018-04-22 14:43:36) phpCAS-1.3.5+ ****************** [CAS.php:468]
+8F8E .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+8F8E .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+8F8E .|    |    Session is authenticated as: 123 [Client.php:936]
+8F8E .|    <= ''
+8F8E .<= ''
+8F8E .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+8F8E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+8F8E .<= ''
+8F8E .=> phpCAS::forceAuthentication() [auth.php:11]
+8F8E .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+8F8E .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+8F8E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+8F8E .|    |    |    |    user = `123' [Client.php:1622]
+8F8E .|    |    |    <= true
+8F8E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+8F8E .|    |    <= true
+8F8E .|    |    no need to authenticate [Client.php:1282]
+8F8E .|    <= true
+8F8E .<= ''
+A48D .START (2018-04-22 14:43:37) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A48D .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A48D .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A48D .|    |    Session is authenticated as: 123 [Client.php:936]
+A48D .|    <= ''
+A48D .<= ''
+A48D .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A48D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A48D .<= ''
+A48D .=> phpCAS::forceAuthentication() [auth.php:11]
+A48D .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A48D .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A48D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A48D .|    |    |    |    user = `123' [Client.php:1622]
+A48D .|    |    |    <= true
+A48D .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A48D .|    |    <= true
+A48D .|    |    no need to authenticate [Client.php:1282]
+A48D .|    <= true
+A48D .<= ''
+30BE .START (2018-04-22 14:43:46) phpCAS-1.3.5+ ****************** [CAS.php:468]
+30BE .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+30BE .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+30BE .|    |    Session is authenticated as: 123 [Client.php:936]
+30BE .|    <= ''
+30BE .<= ''
+30BE .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+30BE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+30BE .<= ''
+30BE .=> phpCAS::forceAuthentication() [auth.php:11]
+30BE .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+30BE .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+30BE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+30BE .|    |    |    |    user = `123' [Client.php:1622]
+30BE .|    |    |    <= true
+30BE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+30BE .|    |    <= true
+30BE .|    |    no need to authenticate [Client.php:1282]
+30BE .|    <= true
+30BE .<= ''
+2751 .START (2018-04-22 14:43:49) phpCAS-1.3.5+ ****************** [CAS.php:468]
+2751 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+2751 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+2751 .|    |    Session is authenticated as: 123 [Client.php:936]
+2751 .|    <= ''
+2751 .<= ''
+2751 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+2751 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+2751 .<= ''
+2751 .=> phpCAS::forceAuthentication() [auth.php:11]
+2751 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+2751 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+2751 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+2751 .|    |    |    |    user = `123' [Client.php:1622]
+2751 .|    |    |    <= true
+2751 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+2751 .|    |    <= true
+2751 .|    |    no need to authenticate [Client.php:1282]
+2751 .|    <= true
+2751 .<= ''
+31F5 .START (2018-04-22 14:44:25) phpCAS-1.3.5+ ****************** [CAS.php:468]
+31F5 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+31F5 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+31F5 .|    |    Session is authenticated as: 123 [Client.php:936]
+31F5 .|    <= ''
+31F5 .<= ''
+31F5 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+31F5 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+31F5 .<= ''
+31F5 .=> phpCAS::forceAuthentication() [auth.php:11]
+31F5 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+31F5 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+31F5 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+31F5 .|    |    |    |    user = `123' [Client.php:1622]
+31F5 .|    |    |    <= true
+31F5 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+31F5 .|    |    <= true
+31F5 .|    |    no need to authenticate [Client.php:1282]
+31F5 .|    <= true
+31F5 .<= ''
+E114 .START (2018-04-22 14:45:40) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E114 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+E114 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E114 .|    |    Session is authenticated as: 123 [Client.php:936]
+E114 .|    <= ''
+E114 .<= ''
+E114 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+E114 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E114 .<= ''
+E114 .=> phpCAS::forceAuthentication() [auth.php:11]
+E114 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E114 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E114 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E114 .|    |    |    |    user = `123' [Client.php:1622]
+E114 .|    |    |    <= true
+E114 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+E114 .|    |    <= true
+E114 .|    |    no need to authenticate [Client.php:1282]
+E114 .|    <= true
+E114 .<= ''
+A5FA .START (2018-04-22 14:45:44) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A5FA .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A5FA .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A5FA .|    |    Session is authenticated as: 123 [Client.php:936]
+A5FA .|    <= ''
+A5FA .<= ''
+A5FA .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A5FA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A5FA .<= ''
+A5FA .=> phpCAS::forceAuthentication() [auth.php:11]
+A5FA .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A5FA .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A5FA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A5FA .|    |    |    |    user = `123' [Client.php:1622]
+A5FA .|    |    |    <= true
+A5FA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A5FA .|    |    <= true
+A5FA .|    |    no need to authenticate [Client.php:1282]
+A5FA .|    <= true
+A5FA .<= ''
+BE36 .START (2018-04-22 14:45:46) phpCAS-1.3.5+ ****************** [CAS.php:468]
+BE36 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+BE36 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+BE36 .|    |    Session is authenticated as: 123 [Client.php:936]
+BE36 .|    <= ''
+BE36 .<= ''
+BE36 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+BE36 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+BE36 .<= ''
+BE36 .=> phpCAS::forceAuthentication() [auth.php:11]
+BE36 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+BE36 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+BE36 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+BE36 .|    |    |    |    user = `123' [Client.php:1622]
+BE36 .|    |    |    <= true
+BE36 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+BE36 .|    |    <= true
+BE36 .|    |    no need to authenticate [Client.php:1282]
+BE36 .|    <= true
+BE36 .<= ''
+A2AE .START (2018-04-22 14:47:04) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A2AE .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A2AE .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A2AE .|    |    Session is authenticated as: 123 [Client.php:936]
+A2AE .|    <= ''
+A2AE .<= ''
+A2AE .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A2AE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A2AE .<= ''
+A2AE .=> phpCAS::forceAuthentication() [auth.php:11]
+A2AE .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A2AE .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A2AE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A2AE .|    |    |    |    user = `123' [Client.php:1622]
+A2AE .|    |    |    <= true
+A2AE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A2AE .|    |    <= true
+A2AE .|    |    no need to authenticate [Client.php:1282]
+A2AE .|    <= true
+A2AE .<= ''
+1E26 .START (2018-04-22 14:47:07) phpCAS-1.3.5+ ****************** [CAS.php:468]
+1E26 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+1E26 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+1E26 .|    |    Session is authenticated as: 123 [Client.php:936]
+1E26 .|    <= ''
+1E26 .<= ''
+1E26 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+1E26 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+1E26 .<= ''
+1E26 .=> phpCAS::forceAuthentication() [auth.php:11]
+1E26 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+1E26 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+1E26 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+1E26 .|    |    |    |    user = `123' [Client.php:1622]
+1E26 .|    |    |    <= true
+1E26 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+1E26 .|    |    <= true
+1E26 .|    |    no need to authenticate [Client.php:1282]
+1E26 .|    <= true
+1E26 .<= ''
+99C8 .START (2018-04-22 14:47:58) phpCAS-1.3.5+ ****************** [CAS.php:468]
+99C8 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+99C8 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+99C8 .|    |    Session is authenticated as: 123 [Client.php:936]
+99C8 .|    <= ''
+99C8 .<= ''
+99C8 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+99C8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+99C8 .<= ''
+99C8 .=> phpCAS::forceAuthentication() [auth.php:11]
+99C8 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+99C8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+99C8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+99C8 .|    |    |    |    user = `123' [Client.php:1622]
+99C8 .|    |    |    <= true
+99C8 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+99C8 .|    |    <= true
+99C8 .|    |    no need to authenticate [Client.php:1282]
+99C8 .|    <= true
+99C8 .<= ''
+585E .START (2018-04-22 14:48:12) phpCAS-1.3.5+ ****************** [CAS.php:468]
+585E .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+585E .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+585E .|    |    Session is authenticated as: 123 [Client.php:936]
+585E .|    <= ''
+585E .<= ''
+585E .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+585E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+585E .<= ''
+585E .=> phpCAS::forceAuthentication() [auth.php:11]
+585E .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+585E .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+585E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+585E .|    |    |    |    user = `123' [Client.php:1622]
+585E .|    |    |    <= true
+585E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+585E .|    |    <= true
+585E .|    |    no need to authenticate [Client.php:1282]
+585E .|    <= true
+585E .<= ''
+FAED .START (2018-04-22 14:48:17) phpCAS-1.3.5+ ****************** [CAS.php:468]
+FAED .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+FAED .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+FAED .|    |    Session is authenticated as: 123 [Client.php:936]
+FAED .|    <= ''
+FAED .<= ''
+FAED .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+FAED .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+FAED .<= ''
+FAED .=> phpCAS::forceAuthentication() [auth.php:11]
+FAED .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+FAED .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+FAED .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+FAED .|    |    |    |    user = `123' [Client.php:1622]
+FAED .|    |    |    <= true
+FAED .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+FAED .|    |    <= true
+FAED .|    |    no need to authenticate [Client.php:1282]
+FAED .|    <= true
+FAED .<= ''
+A86A .START (2018-04-22 14:48:25) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A86A .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A86A .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A86A .|    |    Session is authenticated as: 123 [Client.php:936]
+A86A .|    <= ''
+A86A .<= ''
+A86A .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A86A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A86A .<= ''
+A86A .=> phpCAS::forceAuthentication() [auth.php:11]
+A86A .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A86A .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A86A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A86A .|    |    |    |    user = `123' [Client.php:1622]
+A86A .|    |    |    <= true
+A86A .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A86A .|    |    <= true
+A86A .|    |    no need to authenticate [Client.php:1282]
+A86A .|    <= true
+A86A .<= ''
+9453 .START (2018-04-22 14:48:28) phpCAS-1.3.5+ ****************** [CAS.php:468]
+9453 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+9453 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+9453 .|    |    Session is authenticated as: 123 [Client.php:936]
+9453 .|    <= ''
+9453 .<= ''
+9453 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+9453 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+9453 .<= ''
+9453 .=> phpCAS::forceAuthentication() [auth.php:11]
+9453 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+9453 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+9453 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+9453 .|    |    |    |    user = `123' [Client.php:1622]
+9453 .|    |    |    <= true
+9453 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+9453 .|    |    <= true
+9453 .|    |    no need to authenticate [Client.php:1282]
+9453 .|    <= true
+9453 .<= ''
+A45A .START (2018-04-22 14:48:52) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A45A .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A45A .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A45A .|    |    Session is authenticated as: 123 [Client.php:936]
+A45A .|    <= ''
+A45A .<= ''
+A45A .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A45A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A45A .<= ''
+A45A .=> phpCAS::forceAuthentication() [auth.php:11]
+A45A .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A45A .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A45A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A45A .|    |    |    |    user = `123' [Client.php:1622]
+A45A .|    |    |    <= true
+A45A .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A45A .|    |    <= true
+A45A .|    |    no need to authenticate [Client.php:1282]
+A45A .|    <= true
+A45A .<= ''
+F236 .START (2018-04-22 14:49:35) phpCAS-1.3.5+ ****************** [CAS.php:468]
+F236 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+F236 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+F236 .|    |    Session is authenticated as: asa [Client.php:936]
+F236 .|    <= ''
+F236 .<= ''
+F236 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+F236 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+F236 .<= ''
+F236 .=> phpCAS::forceAuthentication() [auth.php:11]
+F236 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+F236 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+F236 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+F236 .|    |    |    |    user = `asa' [Client.php:1622]
+F236 .|    |    |    <= true
+F236 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+F236 .|    |    <= true
+F236 .|    |    no need to authenticate [Client.php:1282]
+F236 .|    <= true
+F236 .<= ''
+A47D .START (2018-04-22 14:49:57) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A47D .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A47D .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A47D .|    |    Session is authenticated as: asa [Client.php:936]
+A47D .|    <= ''
+A47D .<= ''
+A47D .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A47D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A47D .<= ''
+A47D .=> phpCAS::forceAuthentication() [auth.php:11]
+A47D .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A47D .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A47D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A47D .|    |    |    |    user = `asa' [Client.php:1622]
+A47D .|    |    |    <= true
+A47D .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A47D .|    |    <= true
+A47D .|    |    no need to authenticate [Client.php:1282]
+A47D .|    <= true
+A47D .<= ''
+EB42 .START (2018-04-22 14:50:09) phpCAS-1.3.5+ ****************** [CAS.php:468]
+EB42 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+EB42 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+EB42 .|    |    Session is authenticated as: asa [Client.php:936]
+EB42 .|    <= ''
+EB42 .<= ''
+EB42 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+EB42 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+EB42 .<= ''
+EB42 .=> phpCAS::forceAuthentication() [auth.php:11]
+EB42 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+EB42 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+EB42 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+EB42 .|    |    |    |    user = `asa' [Client.php:1622]
+EB42 .|    |    |    <= true
+EB42 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+EB42 .|    |    <= true
+EB42 .|    |    no need to authenticate [Client.php:1282]
+EB42 .|    <= true
+EB42 .<= ''
+C0F6 .START (2018-04-22 14:50:18) phpCAS-1.3.5+ ****************** [CAS.php:468]
+C0F6 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+C0F6 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+C0F6 .|    |    Session is authenticated as: asa [Client.php:936]
+C0F6 .|    <= ''
+C0F6 .<= ''
+C0F6 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+C0F6 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+C0F6 .<= ''
+C0F6 .=> phpCAS::forceAuthentication() [auth.php:11]
+C0F6 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+C0F6 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+C0F6 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+C0F6 .|    |    |    |    user = `asa' [Client.php:1622]
+C0F6 .|    |    |    <= true
+C0F6 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+C0F6 .|    |    <= true
+C0F6 .|    |    no need to authenticate [Client.php:1282]
+C0F6 .|    <= true
+C0F6 .<= ''
+0160 .START (2018-04-22 14:50:23) phpCAS-1.3.5+ ****************** [CAS.php:468]
+0160 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+0160 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+0160 .|    |    Session is authenticated as: asa [Client.php:936]
+0160 .|    <= ''
+0160 .<= ''
+0160 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+0160 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+0160 .<= ''
+0160 .=> phpCAS::forceAuthentication() [auth.php:11]
+0160 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+0160 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+0160 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+0160 .|    |    |    |    user = `asa' [Client.php:1622]
+0160 .|    |    |    <= true
+0160 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+0160 .|    |    <= true
+0160 .|    |    no need to authenticate [Client.php:1282]
+0160 .|    <= true
+0160 .<= ''
+5B59 .START (2018-04-22 14:56:52) phpCAS-1.3.5+ ****************** [CAS.php:468]
+5B59 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+5B59 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+5B59 .|    |    Session is authenticated as: asa [Client.php:936]
+5B59 .|    <= ''
+5B59 .<= ''
+5B59 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+5B59 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+5B59 .<= ''
+5B59 .=> phpCAS::forceAuthentication() [auth.php:11]
+5B59 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+5B59 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+5B59 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+5B59 .|    |    |    |    user = `asa' [Client.php:1622]
+5B59 .|    |    |    <= true
+5B59 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+5B59 .|    |    <= true
+5B59 .|    |    no need to authenticate [Client.php:1282]
+5B59 .|    <= true
+5B59 .<= ''
+3045 .START (2018-04-22 14:57:19) phpCAS-1.3.5+ ****************** [CAS.php:468]
+3045 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+3045 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+3045 .|    |    Session is authenticated as: asa [Client.php:936]
+3045 .|    <= ''
+3045 .<= ''
+3045 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+3045 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+3045 .<= ''
+3045 .=> phpCAS::forceAuthentication() [auth.php:11]
+3045 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+3045 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+3045 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+3045 .|    |    |    |    user = `asa' [Client.php:1622]
+3045 .|    |    |    <= true
+3045 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+3045 .|    |    <= true
+3045 .|    |    no need to authenticate [Client.php:1282]
+3045 .|    <= true
+3045 .<= ''
+C1CB .START (2018-04-22 15:21:51) phpCAS-1.3.5+ ****************** [CAS.php:468]
+C1CB .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+C1CB .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+C1CB .|    |    Session is not authenticated [Client.php:938]
+C1CB .|    <= ''
+C1CB .<= ''
+C1CB .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+C1CB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+C1CB .<= ''
+C1CB .=> phpCAS::forceAuthentication() [auth.php:11]
+C1CB .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+C1CB .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+C1CB .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+C1CB .|    |    |    |    no user found [Client.php:1635]
+C1CB .|    |    |    <= false
+C1CB .|    |    |    no ticket found [Client.php:1494]
+C1CB .|    |    <= false
+C1CB .|    |    => CAS_Client::redirectToCas(false) [Client.php:1289]
+C1CB .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1656]
+C1CB .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+C1CB .|    |    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+C1CB .|    |    |    |    <= 'http://localhost/gf/certificate/'
+C1CB .|    |    |    <= 'https://login.bit.edu.cn/devcas/login?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F'
+C1CB .|    |    |    Redirect to : https://login.bit.edu.cn/devcas/login?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F [Client.php:1663]
+C1CB .|    |    |    exit()
+C1CB .|    |    |    -
+C1CB .|    |    -
+C1CB .|    -
+DDF1 .START (2018-04-22 15:21:56) phpCAS-1.3.5+ ****************** [CAS.php:468]
+DDF1 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+DDF1 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+DDF1 .|    |    Session is not authenticated [Client.php:938]
+DDF1 .|    |    Ticket 'ST-7432-JSYfdEb33KyKOp5FTzLI-cas01.example.org' found [Client.php:1020]
+DDF1 .|    <= ''
+DDF1 .<= ''
+DDF1 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+DDF1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+DDF1 .<= ''
+DDF1 .=> phpCAS::forceAuthentication() [auth.php:11]
+DDF1 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+DDF1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+DDF1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+DDF1 .|    |    |    |    no user found [Client.php:1635]
+DDF1 .|    |    |    <= false
+DDF1 .|    |    |    CAS 2.0 ticket `ST-7432-JSYfdEb33KyKOp5FTzLI-cas01.example.org' is present [Client.php:1447]
+DDF1 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL, false) [Client.php:1450]
+DDF1 .|    |    |    |     [Client.php:3169]
+DDF1 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3176]
+DDF1 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+DDF1 .|    |    |    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+DDF1 .|    |    |    |    |    <= 'http://localhost/gf/certificate/'
+DDF1 .|    |    |    |    <= 'https://login.bit.edu.cn/devcas/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F'
+DDF1 .|    |    |    |    => CAS_Client::_readURL('https://login.bit.edu.cn/devcas/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F&ticket=ST-7432-JSYfdEb33KyKOp5FTzLI-cas01.example.org', NULL, NULL, NULL) [Client.php:3191]
+DDF1 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+DDF1 .|    |    |    |    |    |    Response Body: 
+DDF1 .|    |    |    |    |    |    
+DDF1 .|    |    |    |    |    |    
+DDF1 .|    |    |    |    |    |    
+DDF1 .|    |    |    |    |    |    
+DDF1 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+DDF1 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+DDF1 .|    |    |    |    |    |    		<cas:user>a</cas:user>
+DDF1 .|    |    |    |    |    |    
+DDF1 .|    |    |    |    |    |    
+DDF1 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+DDF1 .|    |    |    |    |    |    </cas:serviceResponse>
+DDF1 .|    |    |    |    |    |     [CurlRequest.php:84]
+DDF1 .|    |    |    |    |    <= true
+DDF1 .|    |    |    |    <= true
+DDF1 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3261]
+DDF1 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:3376]
+DDF1 .|    |    |    |    <= ''
+DDF1 .|    |    |    |    Storing Proxy List [Client.php:3270]
+DDF1 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3273]
+DDF1 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+DDF1 .|    |    |    |    <= true
+DDF1 .|    |    |    |    => CAS_Client::_renameSession('ST-7432-JSYfdEb33KyKOp5FTzLI-cas01.example.org') [Client.php:3293]
+DDF1 .|    |    |    |    |    Killing session: 22f79ccc86ff77a6681e26a7e79b6bb6a2e277bcd02a75682ab6b1fd55fb089d [Client.php:3682]
+DDF1 .|    |    |    |    |    Starting session: 0066c3b31b3edc9da9b4fb699c851b78629593235044d8171a20ec66131eda5a [Client.php:3686]
+DDF1 .|    |    |    |    |    Restoring old session vars [Client.php:3689]
+DDF1 .|    |    |    |    <= ''
+DDF1 .|    |    |    <= true
+DDF1 .|    |    |    CAS 2.0 ticket `ST-7432-JSYfdEb33KyKOp5FTzLI-cas01.example.org' was validated [Client.php:1453]
+DDF1 .|    |    |    => CAS_Client::getURL() [Client.php:1518]
+DDF1 .|    |    |    <= 'http://localhost/gf/certificate/'
+DDF1 .|    |    |    Prepare redirect to : http://localhost/gf/certificate/ [Client.php:1518]
+DDF1 .|    |    |    => CAS_Client::getURL() [Client.php:1520]
+DDF1 .|    |    |    <= 'http://localhost/gf/certificate/'
+DDF1 .|    |    |    exit()
+DDF1 .|    |    |    -
+DDF1 .|    |    -
+DDF1 .|    -
+DB8C .START (2018-04-22 15:21:56) phpCAS-1.3.5+ ****************** [CAS.php:468]
+DB8C .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+DB8C .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+DB8C .|    |    Session is authenticated as: a [Client.php:936]
+DB8C .|    <= ''
+DB8C .<= ''
+DB8C .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+DB8C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+DB8C .<= ''
+DB8C .=> phpCAS::forceAuthentication() [auth.php:11]
+DB8C .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+DB8C .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+DB8C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+DB8C .|    |    |    |    user = `a' [Client.php:1622]
+DB8C .|    |    |    <= true
+DB8C .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+DB8C .|    |    <= true
+DB8C .|    |    no need to authenticate [Client.php:1282]
+DB8C .|    <= true
+DB8C .<= ''
+8877 .START (2018-04-22 15:22:00) phpCAS-1.3.5+ ****************** [CAS.php:468]
+8877 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+8877 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+8877 .|    |    Session is authenticated as: a [Client.php:936]
+8877 .|    <= ''
+8877 .<= ''
+8877 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+8877 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+8877 .<= ''
+8877 .=> phpCAS::forceAuthentication() [auth.php:11]
+8877 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+8877 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+8877 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+8877 .|    |    |    |    user = `a' [Client.php:1622]
+8877 .|    |    |    <= true
+8877 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+8877 .|    |    <= true
+8877 .|    |    no need to authenticate [Client.php:1282]
+8877 .|    <= true
+8877 .<= ''
+9510 .START (2018-04-22 15:22:01) phpCAS-1.3.5+ ****************** [CAS.php:468]
+9510 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+9510 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+9510 .|    |    Session is authenticated as: a [Client.php:936]
+9510 .|    <= ''
+9510 .<= ''
+9510 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+9510 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+9510 .<= ''
+9510 .=> phpCAS::forceAuthentication() [auth.php:11]
+9510 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+9510 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+9510 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+9510 .|    |    |    |    user = `a' [Client.php:1622]
+9510 .|    |    |    <= true
+9510 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+9510 .|    |    <= true
+9510 .|    |    no need to authenticate [Client.php:1282]
+9510 .|    <= true
+9510 .<= ''
+829E .START (2018-04-22 15:22:40) phpCAS-1.3.5+ ****************** [CAS.php:468]
+829E .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+829E .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+829E .|    |    Session is authenticated as: a [Client.php:936]
+829E .|    |    Ticket 'ST-7433-wC2qjPdzO6UKqymxAXRB-cas01.example.org' found [Client.php:1020]
+829E .|    <= ''
+829E .<= ''
+829E .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+829E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+829E .<= ''
+829E .=> phpCAS::forceAuthentication() [auth.php:11]
+829E .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+829E .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+829E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+829E .|    |    |    |    user = `a' [Client.php:1622]
+829E .|    |    |    <= true
+829E .|    |    |    ticket was present and will be discarded, use renewAuthenticate() [Client.php:1398]
+829E .|    |    |    => CAS_Client::getURL() [Client.php:1400]
+829E .|    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+829E .|    |    |    <= 'http://localhost/gf/certificate/'
+829E .|    |    |    Prepare redirect to : http://localhost/gf/certificate/ [Client.php:1400]
+829E .|    |    |    => CAS_Client::getURL() [Client.php:1402]
+829E .|    |    |    <= 'http://localhost/gf/certificate/'
+829E .|    |    |    exit()
+829E .|    |    |    -
+829E .|    |    -
+829E .|    -
+D2A2 .START (2018-04-22 15:22:40) phpCAS-1.3.5+ ****************** [CAS.php:468]
+D2A2 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+D2A2 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+D2A2 .|    |    Session is authenticated as: a [Client.php:936]
+D2A2 .|    <= ''
+D2A2 .<= ''
+D2A2 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+D2A2 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+D2A2 .<= ''
+D2A2 .=> phpCAS::forceAuthentication() [auth.php:11]
+D2A2 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+D2A2 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+D2A2 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+D2A2 .|    |    |    |    user = `a' [Client.php:1622]
+D2A2 .|    |    |    <= true
+D2A2 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+D2A2 .|    |    <= true
+D2A2 .|    |    no need to authenticate [Client.php:1282]
+D2A2 .|    <= true
+D2A2 .<= ''
+9A4A .START (2018-04-22 15:22:51) phpCAS-1.3.5+ ****************** [CAS.php:468]
+9A4A .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+9A4A .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+9A4A .|    |    Session is not authenticated [Client.php:938]
+9A4A .|    <= ''
+9A4A .<= ''
+9A4A .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+9A4A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+9A4A .<= ''
+9A4A .=> phpCAS::forceAuthentication() [auth.php:11]
+9A4A .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+9A4A .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+9A4A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+9A4A .|    |    |    |    no user found [Client.php:1635]
+9A4A .|    |    |    <= false
+9A4A .|    |    |    no ticket found [Client.php:1494]
+9A4A .|    |    <= false
+9A4A .|    |    => CAS_Client::redirectToCas(false) [Client.php:1289]
+9A4A .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1656]
+9A4A .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+9A4A .|    |    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+9A4A .|    |    |    |    <= 'http://localhost/gf/certificate/'
+9A4A .|    |    |    <= 'https://login.bit.edu.cn/devcas/login?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F'
+9A4A .|    |    |    Redirect to : https://login.bit.edu.cn/devcas/login?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F [Client.php:1663]
+9A4A .|    |    |    exit()
+9A4A .|    |    |    -
+9A4A .|    |    -
+9A4A .|    -
+6532 .START (2018-04-22 15:22:56) phpCAS-1.3.5+ ****************** [CAS.php:468]
+6532 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+6532 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+6532 .|    |    Session is not authenticated [Client.php:938]
+6532 .|    |    Ticket 'ST-7434-OZFqOV5R3L3RcYmVaZwl-cas01.example.org' found [Client.php:1020]
+6532 .|    <= ''
+6532 .<= ''
+6532 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+6532 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+6532 .<= ''
+6532 .=> phpCAS::forceAuthentication() [auth.php:11]
+6532 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+6532 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+6532 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+6532 .|    |    |    |    no user found [Client.php:1635]
+6532 .|    |    |    <= false
+6532 .|    |    |    CAS 2.0 ticket `ST-7434-OZFqOV5R3L3RcYmVaZwl-cas01.example.org' is present [Client.php:1447]
+6532 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL, false) [Client.php:1450]
+6532 .|    |    |    |     [Client.php:3169]
+6532 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:3176]
+6532 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:453]
+6532 .|    |    |    |    |    |    Final URI: http://localhost/gf/certificate/ [Client.php:3548]
+6532 .|    |    |    |    |    <= 'http://localhost/gf/certificate/'
+6532 .|    |    |    |    <= 'https://login.bit.edu.cn/devcas/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F'
+6532 .|    |    |    |    => CAS_Client::_readURL('https://login.bit.edu.cn/devcas/serviceValidate?service=http%3A%2F%2Flocalhost%2Fgf%2Fcertificate%2F&ticket=ST-7434-OZFqOV5R3L3RcYmVaZwl-cas01.example.org', NULL, NULL, NULL) [Client.php:3191]
+6532 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:242]
+6532 .|    |    |    |    |    |    Response Body: 
+6532 .|    |    |    |    |    |    
+6532 .|    |    |    |    |    |    
+6532 .|    |    |    |    |    |    
+6532 .|    |    |    |    |    |    
+6532 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+6532 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+6532 .|    |    |    |    |    |    		<cas:user>a</cas:user>
+6532 .|    |    |    |    |    |    
+6532 .|    |    |    |    |    |    
+6532 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+6532 .|    |    |    |    |    |    </cas:serviceResponse>
+6532 .|    |    |    |    |    |     [CurlRequest.php:84]
+6532 .|    |    |    |    |    <= true
+6532 .|    |    |    |    <= true
+6532 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:3261]
+6532 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:3376]
+6532 .|    |    |    |    <= ''
+6532 .|    |    |    |    Storing Proxy List [Client.php:3270]
+6532 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:3273]
+6532 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+6532 .|    |    |    |    <= true
+6532 .|    |    |    |    => CAS_Client::_renameSession('ST-7434-OZFqOV5R3L3RcYmVaZwl-cas01.example.org') [Client.php:3293]
+6532 .|    |    |    |    |    Killing session: 0066c3b31b3edc9da9b4fb699c851b78629593235044d8171a20ec66131eda5a [Client.php:3682]
+6532 .|    |    |    |    |    Starting session: 94d295efbcec720a544065c1f49c5152b290cb94ca3ab267b5db9f80a5c2bb3e [Client.php:3686]
+6532 .|    |    |    |    |    Restoring old session vars [Client.php:3689]
+6532 .|    |    |    |    <= ''
+6532 .|    |    |    <= true
+6532 .|    |    |    CAS 2.0 ticket `ST-7434-OZFqOV5R3L3RcYmVaZwl-cas01.example.org' was validated [Client.php:1453]
+6532 .|    |    |    => CAS_Client::getURL() [Client.php:1518]
+6532 .|    |    |    <= 'http://localhost/gf/certificate/'
+6532 .|    |    |    Prepare redirect to : http://localhost/gf/certificate/ [Client.php:1518]
+6532 .|    |    |    => CAS_Client::getURL() [Client.php:1520]
+6532 .|    |    |    <= 'http://localhost/gf/certificate/'
+6532 .|    |    |    exit()
+6532 .|    |    |    -
+6532 .|    |    -
+6532 .|    -
+E759 .START (2018-04-22 15:22:57) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E759 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+E759 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E759 .|    |    Session is authenticated as: a [Client.php:936]
+E759 .|    <= ''
+E759 .<= ''
+E759 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+E759 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E759 .<= ''
+E759 .=> phpCAS::forceAuthentication() [auth.php:11]
+E759 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E759 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E759 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E759 .|    |    |    |    user = `a' [Client.php:1622]
+E759 .|    |    |    <= true
+E759 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+E759 .|    |    <= true
+E759 .|    |    no need to authenticate [Client.php:1282]
+E759 .|    <= true
+E759 .<= ''
+EDB8 .START (2018-04-22 15:39:05) phpCAS-1.3.5+ ****************** [CAS.php:468]
+EDB8 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+EDB8 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+EDB8 .|    |    Session is authenticated as: a [Client.php:936]
+EDB8 .|    <= ''
+EDB8 .<= ''
+EDB8 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+EDB8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+EDB8 .<= ''
+EDB8 .=> phpCAS::forceAuthentication() [auth.php:11]
+EDB8 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+EDB8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+EDB8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+EDB8 .|    |    |    |    user = `a' [Client.php:1622]
+EDB8 .|    |    |    <= true
+EDB8 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+EDB8 .|    |    <= true
+EDB8 .|    |    no need to authenticate [Client.php:1282]
+EDB8 .|    <= true
+EDB8 .<= ''
+6E45 .START (2018-04-22 15:39:31) phpCAS-1.3.5+ ****************** [CAS.php:468]
+6E45 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+6E45 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+6E45 .|    |    Session is authenticated as: a [Client.php:936]
+6E45 .|    <= ''
+6E45 .<= ''
+6E45 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+6E45 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+6E45 .<= ''
+6E45 .=> phpCAS::forceAuthentication() [auth.php:11]
+6E45 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+6E45 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+6E45 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+6E45 .|    |    |    |    user = `a' [Client.php:1622]
+6E45 .|    |    |    <= true
+6E45 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+6E45 .|    |    <= true
+6E45 .|    |    no need to authenticate [Client.php:1282]
+6E45 .|    <= true
+6E45 .<= ''
+0580 .START (2018-04-22 15:39:36) phpCAS-1.3.5+ ****************** [CAS.php:468]
+0580 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+0580 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+0580 .|    |    Session is authenticated as: a [Client.php:936]
+0580 .|    <= ''
+0580 .<= ''
+0580 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+0580 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+0580 .<= ''
+0580 .=> phpCAS::forceAuthentication() [auth.php:11]
+0580 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+0580 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+0580 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+0580 .|    |    |    |    user = `a' [Client.php:1622]
+0580 .|    |    |    <= true
+0580 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+0580 .|    |    <= true
+0580 .|    |    no need to authenticate [Client.php:1282]
+0580 .|    <= true
+0580 .<= ''
+5F68 .START (2018-04-22 15:39:41) phpCAS-1.3.5+ ****************** [CAS.php:468]
+5F68 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+5F68 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+5F68 .|    |    Session is authenticated as: a [Client.php:936]
+5F68 .|    <= ''
+5F68 .<= ''
+5F68 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+5F68 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+5F68 .<= ''
+5F68 .=> phpCAS::forceAuthentication() [auth.php:11]
+5F68 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+5F68 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+5F68 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+5F68 .|    |    |    |    user = `a' [Client.php:1622]
+5F68 .|    |    |    <= true
+5F68 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+5F68 .|    |    <= true
+5F68 .|    |    no need to authenticate [Client.php:1282]
+5F68 .|    <= true
+5F68 .<= ''
+34E0 .START (2018-04-22 15:40:00) phpCAS-1.3.5+ ****************** [CAS.php:468]
+34E0 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+34E0 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+34E0 .|    |    Session is authenticated as: a [Client.php:936]
+34E0 .|    <= ''
+34E0 .<= ''
+34E0 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+34E0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+34E0 .<= ''
+34E0 .=> phpCAS::forceAuthentication() [auth.php:11]
+34E0 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+34E0 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+34E0 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+34E0 .|    |    |    |    user = `a' [Client.php:1622]
+34E0 .|    |    |    <= true
+34E0 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+34E0 .|    |    <= true
+34E0 .|    |    no need to authenticate [Client.php:1282]
+34E0 .|    <= true
+34E0 .<= ''
+119D .START (2018-04-22 15:40:08) phpCAS-1.3.5+ ****************** [CAS.php:468]
+119D .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+119D .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+119D .|    |    Session is authenticated as: a [Client.php:936]
+119D .|    <= ''
+119D .<= ''
+119D .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+119D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+119D .<= ''
+119D .=> phpCAS::forceAuthentication() [auth.php:11]
+119D .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+119D .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+119D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+119D .|    |    |    |    user = `a' [Client.php:1622]
+119D .|    |    |    <= true
+119D .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+119D .|    |    <= true
+119D .|    |    no need to authenticate [Client.php:1282]
+119D .|    <= true
+119D .<= ''
+8CC7 .START (2018-04-22 15:40:14) phpCAS-1.3.5+ ****************** [CAS.php:468]
+8CC7 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+8CC7 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+8CC7 .|    |    Session is authenticated as: a [Client.php:936]
+8CC7 .|    <= ''
+8CC7 .<= ''
+8CC7 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+8CC7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+8CC7 .<= ''
+8CC7 .=> phpCAS::forceAuthentication() [auth.php:11]
+8CC7 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+8CC7 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+8CC7 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+8CC7 .|    |    |    |    user = `a' [Client.php:1622]
+8CC7 .|    |    |    <= true
+8CC7 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+8CC7 .|    |    <= true
+8CC7 .|    |    no need to authenticate [Client.php:1282]
+8CC7 .|    <= true
+8CC7 .<= ''
+1F36 .START (2018-04-22 15:40:17) phpCAS-1.3.5+ ****************** [CAS.php:468]
+1F36 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+1F36 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+1F36 .|    |    Session is authenticated as: a [Client.php:936]
+1F36 .|    <= ''
+1F36 .<= ''
+1F36 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+1F36 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+1F36 .<= ''
+1F36 .=> phpCAS::forceAuthentication() [auth.php:11]
+1F36 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+1F36 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+1F36 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+1F36 .|    |    |    |    user = `a' [Client.php:1622]
+1F36 .|    |    |    <= true
+1F36 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+1F36 .|    |    <= true
+1F36 .|    |    no need to authenticate [Client.php:1282]
+1F36 .|    <= true
+1F36 .<= ''
+EFED .START (2018-04-22 15:43:22) phpCAS-1.3.5+ ****************** [CAS.php:468]
+EFED .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+EFED .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+EFED .|    |    Session is authenticated as: aaa [Client.php:936]
+EFED .|    <= ''
+EFED .<= ''
+EFED .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+EFED .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+EFED .<= ''
+EFED .=> phpCAS::forceAuthentication() [auth.php:11]
+EFED .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+EFED .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+EFED .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+EFED .|    |    |    |    user = `aaa' [Client.php:1622]
+EFED .|    |    |    <= true
+EFED .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+EFED .|    |    <= true
+EFED .|    |    no need to authenticate [Client.php:1282]
+EFED .|    <= true
+EFED .<= ''
+CABC .START (2018-04-22 15:43:31) phpCAS-1.3.5+ ****************** [CAS.php:468]
+CABC .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+CABC .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+CABC .|    |    Session is authenticated as: aaa [Client.php:936]
+CABC .|    <= ''
+CABC .<= ''
+CABC .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+CABC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+CABC .<= ''
+CABC .=> phpCAS::forceAuthentication() [auth.php:11]
+CABC .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+CABC .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+CABC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+CABC .|    |    |    |    user = `aaa' [Client.php:1622]
+CABC .|    |    |    <= true
+CABC .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+CABC .|    |    <= true
+CABC .|    |    no need to authenticate [Client.php:1282]
+CABC .|    <= true
+CABC .<= ''
+7578 .START (2018-04-22 15:43:32) phpCAS-1.3.5+ ****************** [CAS.php:468]
+7578 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+7578 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+7578 .|    |    Session is authenticated as: aaa [Client.php:936]
+7578 .|    <= ''
+7578 .<= ''
+7578 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+7578 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+7578 .<= ''
+7578 .=> phpCAS::forceAuthentication() [auth.php:11]
+7578 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+7578 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+7578 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+7578 .|    |    |    |    user = `aaa' [Client.php:1622]
+7578 .|    |    |    <= true
+7578 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+7578 .|    |    <= true
+7578 .|    |    no need to authenticate [Client.php:1282]
+7578 .|    <= true
+7578 .<= ''
+A246 .START (2018-04-22 15:43:42) phpCAS-1.3.5+ ****************** [CAS.php:468]
+A246 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+A246 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+A246 .|    |    Session is authenticated as: aaa [Client.php:936]
+A246 .|    <= ''
+A246 .<= ''
+A246 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+A246 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+A246 .<= ''
+A246 .=> phpCAS::forceAuthentication() [auth.php:11]
+A246 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+A246 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+A246 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+A246 .|    |    |    |    user = `aaa' [Client.php:1622]
+A246 .|    |    |    <= true
+A246 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+A246 .|    |    <= true
+A246 .|    |    no need to authenticate [Client.php:1282]
+A246 .|    <= true
+A246 .<= ''
+29F7 .START (2018-04-22 15:43:43) phpCAS-1.3.5+ ****************** [CAS.php:468]
+29F7 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+29F7 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+29F7 .|    |    Session is authenticated as: aaa [Client.php:936]
+29F7 .|    <= ''
+29F7 .<= ''
+29F7 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+29F7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+29F7 .<= ''
+29F7 .=> phpCAS::forceAuthentication() [auth.php:11]
+29F7 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+29F7 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+29F7 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+29F7 .|    |    |    |    user = `aaa' [Client.php:1622]
+29F7 .|    |    |    <= true
+29F7 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+29F7 .|    |    <= true
+29F7 .|    |    no need to authenticate [Client.php:1282]
+29F7 .|    <= true
+29F7 .<= ''
+F2B0 .START (2018-04-22 15:44:03) phpCAS-1.3.5+ ****************** [CAS.php:468]
+F2B0 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+F2B0 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+F2B0 .|    |    Session is authenticated as: aaa [Client.php:936]
+F2B0 .|    <= ''
+F2B0 .<= ''
+F2B0 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+F2B0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+F2B0 .<= ''
+F2B0 .=> phpCAS::forceAuthentication() [auth.php:11]
+F2B0 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+F2B0 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+F2B0 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+F2B0 .|    |    |    |    user = `aaa' [Client.php:1622]
+F2B0 .|    |    |    <= true
+F2B0 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+F2B0 .|    |    <= true
+F2B0 .|    |    no need to authenticate [Client.php:1282]
+F2B0 .|    <= true
+F2B0 .<= ''
+BF92 .START (2018-04-22 15:44:33) phpCAS-1.3.5+ ****************** [CAS.php:468]
+BF92 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+BF92 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+BF92 .|    |    Session is authenticated as: aaa [Client.php:936]
+BF92 .|    <= ''
+BF92 .<= ''
+BF92 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+BF92 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+BF92 .<= ''
+BF92 .=> phpCAS::forceAuthentication() [auth.php:11]
+BF92 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+BF92 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+BF92 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+BF92 .|    |    |    |    user = `aaa' [Client.php:1622]
+BF92 .|    |    |    <= true
+BF92 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+BF92 .|    |    <= true
+BF92 .|    |    no need to authenticate [Client.php:1282]
+BF92 .|    <= true
+BF92 .<= ''
+22E5 .START (2018-04-22 15:44:47) phpCAS-1.3.5+ ****************** [CAS.php:468]
+22E5 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+22E5 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+22E5 .|    |    Session is authenticated as: aaa [Client.php:936]
+22E5 .|    <= ''
+22E5 .<= ''
+22E5 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+22E5 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+22E5 .<= ''
+22E5 .=> phpCAS::forceAuthentication() [auth.php:11]
+22E5 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+22E5 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+22E5 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+22E5 .|    |    |    |    user = `aaa' [Client.php:1622]
+22E5 .|    |    |    <= true
+22E5 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+22E5 .|    |    <= true
+22E5 .|    |    no need to authenticate [Client.php:1282]
+22E5 .|    <= true
+22E5 .<= ''
+B0B8 .START (2018-04-22 15:44:50) phpCAS-1.3.5+ ****************** [CAS.php:468]
+B0B8 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+B0B8 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+B0B8 .|    |    Session is authenticated as: aaa [Client.php:936]
+B0B8 .|    <= ''
+B0B8 .<= ''
+B0B8 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+B0B8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+B0B8 .<= ''
+B0B8 .=> phpCAS::forceAuthentication() [auth.php:11]
+B0B8 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+B0B8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+B0B8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+B0B8 .|    |    |    |    user = `aaa' [Client.php:1622]
+B0B8 .|    |    |    <= true
+B0B8 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+B0B8 .|    |    <= true
+B0B8 .|    |    no need to authenticate [Client.php:1282]
+B0B8 .|    <= true
+B0B8 .<= ''
+F40E .START (2018-04-22 15:52:50) phpCAS-1.3.5+ ****************** [CAS.php:468]
+F40E .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+F40E .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+F40E .|    |    Session is authenticated as: aaa [Client.php:936]
+F40E .|    <= ''
+F40E .<= ''
+F40E .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+F40E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+F40E .<= ''
+F40E .=> phpCAS::forceAuthentication() [auth.php:11]
+F40E .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+F40E .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+F40E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+F40E .|    |    |    |    user = `aaa' [Client.php:1622]
+F40E .|    |    |    <= true
+F40E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+F40E .|    |    <= true
+F40E .|    |    no need to authenticate [Client.php:1282]
+F40E .|    <= true
+F40E .<= ''
+130F .START (2018-04-22 16:04:10) phpCAS-1.3.5+ ****************** [CAS.php:468]
+130F .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+130F .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+130F .|    |    Session is authenticated as: aaa [Client.php:936]
+130F .|    <= ''
+130F .<= ''
+130F .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+130F .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+130F .<= ''
+130F .=> phpCAS::forceAuthentication() [auth.php:11]
+130F .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+130F .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+130F .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+130F .|    |    |    |    user = `aaa' [Client.php:1622]
+130F .|    |    |    <= true
+130F .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+130F .|    |    <= true
+130F .|    |    no need to authenticate [Client.php:1282]
+130F .|    <= true
+130F .<= ''
+E4EE .START (2018-04-22 16:04:59) phpCAS-1.3.5+ ****************** [CAS.php:468]
+E4EE .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+E4EE .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+E4EE .|    |    Session is authenticated as: aaa [Client.php:936]
+E4EE .|    <= ''
+E4EE .<= ''
+E4EE .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+E4EE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+E4EE .<= ''
+E4EE .=> phpCAS::forceAuthentication() [auth.php:11]
+E4EE .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+E4EE .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+E4EE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+E4EE .|    |    |    |    user = `aaa' [Client.php:1622]
+E4EE .|    |    |    <= true
+E4EE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+E4EE .|    |    <= true
+E4EE .|    |    no need to authenticate [Client.php:1282]
+E4EE .|    <= true
+E4EE .<= ''
+2FCE .START (2018-04-22 16:05:10) phpCAS-1.3.5+ ****************** [CAS.php:468]
+2FCE .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+2FCE .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+2FCE .|    |    Session is authenticated as: aaa [Client.php:936]
+2FCE .|    <= ''
+2FCE .<= ''
+2FCE .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+2FCE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+2FCE .<= ''
+2FCE .=> phpCAS::forceAuthentication() [auth.php:11]
+2FCE .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+2FCE .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+2FCE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+2FCE .|    |    |    |    user = `aaa' [Client.php:1622]
+2FCE .|    |    |    <= true
+2FCE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+2FCE .|    |    <= true
+2FCE .|    |    no need to authenticate [Client.php:1282]
+2FCE .|    <= true
+2FCE .<= ''
+D3D4 .START (2018-04-22 16:06:22) phpCAS-1.3.5+ ****************** [CAS.php:468]
+D3D4 .=> phpCAS::client('2.0', 'login.bit.edu.cn', 443, 'devcas') [auth.php:9]
+D3D4 .|    => CAS_Client::__construct('2.0', false, 'login.bit.edu.cn', 443, 'devcas', true) [CAS.php:360]
+D3D4 .|    |    Session is authenticated as: aaa [Client.php:936]
+D3D4 .|    <= ''
+D3D4 .<= ''
+D3D4 .=> phpCAS::setNoCasServerValidation() [auth.php:10]
+D3D4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1644]
+D3D4 .<= ''
+D3D4 .=> phpCAS::forceAuthentication() [auth.php:11]
+D3D4 .|    => CAS_Client::forceAuthentication() [CAS.php:1098]
+D3D4 .|    |    => CAS_Client::isAuthenticated() [Client.php:1280]
+D3D4 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1393]
+D3D4 .|    |    |    |    user = `aaa' [Client.php:1622]
+D3D4 .|    |    |    <= true
+D3D4 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1417]
+D3D4 .|    |    <= true
+D3D4 .|    |    no need to authenticate [Client.php:1282]
+D3D4 .|    <= true
+D3D4 .<= ''

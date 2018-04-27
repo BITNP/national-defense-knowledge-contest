@@ -2,7 +2,6 @@
 require_once 'CAS/CAS.php';
 require_once 'config.php';
 require_once 'control/log.php';
-//session_start();
 
 phpCAS::setDebug();
 phpCAS::setVerbose(true);

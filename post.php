@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 
@@ -26,7 +27,7 @@
 <body>
 
 <?php
-session_start();
+//session_start();
 $page_title = '规则';
 require 'header.php';
 ?>

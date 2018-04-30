@@ -62,7 +62,7 @@ try{
     if(count($raw) !== count($keys))
         throw new Exception();
 }catch (Exception $e){
-    Log::write("security\r\n" . "invalid data from " . $_SESSION['name']);
+    Log::write("security\r\n" . "invalid data from " . $_SESSION['name'] . ' stuID = ' . $_SESSION['stuID']);
     die(json_encode([
         'success' => false,
         'err_message' => '数据校验失败'

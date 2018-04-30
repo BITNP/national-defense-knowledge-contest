@@ -5,7 +5,7 @@ require_once '../auth.php';
 if($_SESSION['status'] != 2 || $_SESSION['score'] < 60)
 {
     if($_SESSION['status'] == 2){
-        $msg = '您成绩未达到要求，无法获取证书！';
+        $msg = '您成绩未达到要求，未能获取证书！';
     }else{
         $msg = '您还未完成答题！';
     }

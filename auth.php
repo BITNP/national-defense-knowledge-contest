@@ -28,14 +28,14 @@ try{
     {
         //new user
         //random select problems
-        $p1 = $dbh->query("SELECT * FROM problems WHERE type = 0 ORDER by rand() limit $cnt_judge");
+        $p1 = $dbh->query("SELECT * FROM problems WHERE type = 1 ORDER by rand() limit $cnt_choose");
         $problems = [];
         $keyans = [];
         foreach ($p1 as $row){
             array_push($problems, $row['id']);
             array_push($keyans, $row['answer']);
         }
-        $p1 = $dbh->query("SELECT * FROM problems WHERE type = 1 ORDER by rand() limit $cnt_choose");
+        $p1 = $dbh->query("SELECT * FROM problems WHERE type = 0 ORDER by rand() limit $cnt_judge");
         foreach ($p1 as $row)
         {
             array_push($problems, $row['id']);
@@ -56,6 +56,7 @@ try{
     $data = $res->fetch();
     $_SESSION['id'] = $data['id'];
     $_SESSION['name'] = $data['name'];
+    $_SESSION['stuID'] = $CASid;
     $_SESSION['status'] = $data['status'];
     if($data['status'] == 2){
         $_SESSION['score'] = $data['score'];

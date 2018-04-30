@@ -121,7 +121,7 @@ include 'header.php';
             <p>你将有 15 分钟时间答题，<?=$end_time?> 停止交卷，还剩 <span class="navbar_time"></span> </p>
             <hr/>
 
-            <input style="display: none" id='timer' value=<?=strtotime($end_time)-time()?> />
+            <input style="display: none" id='timer' value=<?=strtotime($end_time)?> />
 
             <div id="problems">
             <?php

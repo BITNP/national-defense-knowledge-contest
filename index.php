@@ -37,57 +37,15 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-preview">
-                <a href="post.php">
-                    <h2 class="post-title">
-                        竞赛规则
-                    </h2>
-                    <h3 class="post-subtitle">
-                        此处显示摘要或副标题
-                    </h3>
-                </a>
-                <p class="post-meta">Posted
-                    on September 24, 2018</p>
-            </div>
-            <hr>
-            <div class="post-preview">
-                <a href="javascript:void(0)">
-                    <h2 class="post-title">
-                        报名通知
-                    </h2>
-                </a>
-                <p class="post-meta">Posted
-                    on September 18, 2018</p>
-            </div>
-            <hr>
-            <div class="post-preview">
-                <a href="javascript:void(0)">
-                    <h2 class="post-title">
-                        Science has not yet mastered prophecy
-                    </h2>
-                    <h3 class="post-subtitle">
-                        We predict too much for the next year and yet far too little for the next ten.
-                    </h3>
-                </a>
-                <p class="post-meta">Posted by
-                    <a href="#">Start Bootstrap</a>
-                    on August 24, 2018</p>
-            </div>
-            <hr>
-            <div class="post-preview">
-                <a href="javascript:void(0)">
-                    <h2 class="post-title">
-                        Failure is not an option
-                    </h2>
-                    <h3 class="post-subtitle">
-                        Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                    </h3>
-                </a>
-                <p class="post-meta">Posted by
-                    <a href="#">Start Bootstrap</a>
-                    on July 8, 2018</p>
-            </div>
-            <hr>
+            <h2 class="section-heading">竞赛简介</h2>
+
+            <p>北理国防知识竞赛，分为线上网络答题和线下现场竞赛，由学工处武装部北京理工大学国防教育协会主办并承办，这里特别感谢北京理工大学网络开拓者协会的技术配合。我们旨在让北理学子增长国防知识提高国防意识，让学校国防教育内容更加丰富，所以我们举办此次北理国防知识竞赛。</p>
+
+            <p>共30道题，满分100分，60分及格，系统随机抽取。其中选择题（单项选择）20道，每道4分，选择题共80分；判断题10道，每道2分，判断题共20分。最终成绩达到或超过60分即可获得一份可下载的线上证书。</p>
+
+            <p>答题限时15分钟，每人只有一次答题机会，中途如有退出，系统将不会保存所作答案，则失去此次竞赛机会。希望同学们掌握好答题时间，并做好充分的答题准备，预祝同学们考个好成绩！</p>
+
+            <hr/>
             <!-- Pager -->
             <div class="clearfix">
                 <a class="btn btn-primary float-right" href="ready.php">现在答题 &rarr;</a>
@@ -96,7 +54,7 @@
     </div>
 </div>
 
-<hr>
+<br/>
 <?php
 require 'footer.html'
 ?>

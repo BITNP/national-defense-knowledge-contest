@@ -18,9 +18,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="ready.php">答题</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="post.php">规则</a>
-                    </li>
                     <?php if(isset($_SESSION['status'])){ ?>
                         <li class="nav-item">
                             <a class="nav-link" href="auth.php?logout=">退出登录</a>

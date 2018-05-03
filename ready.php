@@ -1,3 +1,6 @@
+<?php
+require_once 'auth.php';
+?>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 
@@ -25,7 +28,6 @@
 
 <body>
 <?php
-require_once 'auth.php';
 $page_title = '答题';
 require 'header.php';
 ?>

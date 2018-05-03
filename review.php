@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require 'auth.php'; ?>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 
@@ -36,8 +36,6 @@
 <?php
 //if(!isset($_SESSION['online']))
 //    die("<script>window.location = 'signup.php'</script>");
-
-require 'auth.php';
 
 $userid = $_SESSION['id'];
 //$userid = 1;

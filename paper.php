@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require 'auth.php'; ?>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 
@@ -72,8 +72,6 @@ function uglify($str, $ano, $using_a_tag = true)
     }
     return $ret;
 }
-
-require 'auth.php';
 
 $userid = $_SESSION['id'];
 

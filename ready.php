@@ -1,8 +1,3 @@
-<?php
-require_once 'auth.php';
-$page_title = '答题';
-require 'header.php';
-?>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 
@@ -29,7 +24,11 @@ require 'header.php';
 </head>
 
 <body>
-
+<?php
+require_once 'auth.php';
+$page_title = '答题';
+require 'header.php';
+?>
 <!---->
 <!--<div id="login_model" style="display: none; padding-left: 15px; padding-right: 15px;">-->
 <!--    <p>尚未验证身份或验证已经超时，请重新验证。</p>-->

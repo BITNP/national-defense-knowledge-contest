@@ -14,8 +14,6 @@ if (isset($_REQUEST['logout'])) {
     die();
 }
 
-session_start();
-
 $dsn = "mysql:host=$db_host;dbname=$db_name";
 $authres = [];
 try{

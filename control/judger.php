@@ -24,7 +24,7 @@ session_start();
 if(!isset($_SESSION['status']) || $_SESSION['status'] != 1){
     die(json_encode([
         'success' => false,
-        'err_message' => '权限校验失败，请尝试刷新页面'
+        'err_message' => '权限校验失败，可能已经完成交卷，请尝试刷新页面！'
     ]));
 }
 

@@ -18,7 +18,9 @@
 require '../config.php';
 require_once 'log.php';
 
+date_default_timezone_set("PRC");
 session_start();
+
 if(!isset($_SESSION['status']) || $_SESSION['status'] != 1){
     die(json_encode([
         'success' => false,

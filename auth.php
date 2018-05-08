@@ -22,7 +22,7 @@ try{
     $dbh->query("SET NAMES utf8");
     $CASid = phpCAS::getUser();
 //    **************************
-    var_dump(phpCAS::getAttributes());
+//    var_dump(phpCAS::getAttributes());
 //    **************************
     $res = $dbh->query("SELECT * FROM users WHERE casid = '$CASid'");
     if(!$res){

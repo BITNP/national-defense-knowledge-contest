@@ -44,7 +44,7 @@
                 <div class="site-heading">
                     <span class="subheading">北京理工大学第一届</span>
                     <h1>国防知识竞赛</h1>
-                    <span class="subheading">2018.5.8~5.16</span>
+                    <span class="subheading">2018 年 5 月</span>
                 </div>
             </div>
         </div>

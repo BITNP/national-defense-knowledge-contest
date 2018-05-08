@@ -21,6 +21,7 @@ try{
     $dbh = new PDO($dsn, $db_username, $db_password);
     $dbh->query("SET NAMES utf8");
     $CASid = phpCAS::getUser();
+    var_dump(phpCAS::getAttributes());
     $res = $dbh->query("SELECT * FROM users WHERE casid = '$CASid'");
     if(!$res){
         throw new Exception("SQL Error 0x001, error message \r\n" . $dbh->errorInfo()[2]);

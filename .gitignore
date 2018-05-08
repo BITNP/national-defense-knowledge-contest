@@ -1,7 +1,6 @@
 /older/
 *.zip
 *.log
-/config.php
 /js/paper.js
 /official_problems.sql
 /.idea/

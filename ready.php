@@ -18,8 +18,6 @@ require_once 'auth.php';
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.css" rel="stylesheet">
@@ -30,6 +28,7 @@ require_once 'auth.php';
 <?php
 $page_title = '答题';
 require 'header.php';
+require 'config.php';
 ?>
 <!---->
 <!--<div id="login_model" style="display: none; padding-left: 15px; padding-right: 15px;">-->
@@ -64,15 +63,16 @@ require 'header.php';
                     <a href="paper.php" class="btn btn-primary">继续答题</a>
             <?php
                 }else if($_SESSION['status'] == 0){
+                    if(time() < $END_TIME){
             ?>
-
-                    <p>试题共30道，系统随机抽取，满分100分。最终成绩达到或超过60分即可获得一份可下载的线上证书。</p>
-
-                    <p>答题限时15分钟，每人只有一次答题机会，中途如有退出，<strong>系统将不会保存当前答案</strong>，但可重新打开网页作答。希望同学们掌握好答题时间，并做好充分的答题准备，预祝同学们考个好成绩！</p>
-
-                    <p>若您已做好准备，点击下面的按钮进入答题系统。</p>
-                    <a href="paper.php" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> 进入答题</a>
-            <?php
+                        <p>试题共30道，系统随机抽取，满分100分。最终成绩达到或超过60分即可获得一份可下载的线上证书。</p>
+                        <p>答题限时15分钟，每人只有一次答题机会，中途如有退出，<strong>系统将不会保存当前答案</strong>，但可重新打开网页作答。希望同学们掌握好答题时间，并做好充分的答题准备，预祝同学们考个好成绩！</p>
+                        <p>若您已做好准备，点击下面的按钮进入答题系统。</p>
+                        <a href="paper.php" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> 进入答题</a>
+            <?php   } else { ?>
+                        <p>本次活动已经结束，感谢您的参与</p>
+                        <a href="index.php" class="btn btn-primary">返回首页</a>
+            <?php   }
                 }else{
             ?>
                     <p>您已经完成答题，每人仅有一次答题机会。</p>

@@ -21,7 +21,9 @@ try{
     $dbh = new PDO($dsn, $db_username, $db_password);
     $dbh->query("SET NAMES utf8");
     $CASid = phpCAS::getUser();
-    var_dump(phpCAS::getAttributes());
+//    **************************
+//    var_dump(phpCAS::getAttributes());
+//    **************************
     $res = $dbh->query("SELECT * FROM users WHERE casid = '$CASid'");
     if(!$res){
         throw new Exception("SQL Error 0x001, error message \r\n" . $dbh->errorInfo()[2]);
@@ -46,7 +48,11 @@ try{
         $problems = implode(',', $problems);
         $keyans = implode(',', $keyans);
 
-        $SQL = "INSERT INTO users(casid, name, stuNum, status, problems, keyans) VALUES('$CASid', '$CASid', '$CASid', 0, '$problems', '$keyans')";
+        $school = phpCAS::getAttribute('eduPersonOrgDN');
+        $cname = phpCAS::getAttribute('cn');
+        $stuNum = phpCAS::getAttribute('uid');
+
+        $SQL = "INSERT INTO users(casid, name, stuNum, school, status, problems, keyans) VALUES('$CASid', '$cname', '$stuNum', '$school', 0, '$problems', '$keyans')";
 
         $dbh->exec($SQL);
     }

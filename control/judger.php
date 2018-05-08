@@ -21,6 +21,13 @@ require_once 'log.php';
 date_default_timezone_set("PRC");
 session_start();
 
+if(time() >= $END_TIME + 901){
+    die(json_encode([
+        'success' => false,
+        'err_message' => '活动已经结束，感谢您的参与'
+    ]));
+}
+
 if(!isset($_SESSION['status']) || $_SESSION['status'] != 1){
     die(json_encode([
         'success' => false,

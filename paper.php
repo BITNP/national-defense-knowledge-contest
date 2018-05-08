@@ -16,8 +16,6 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.css" rel="stylesheet">
@@ -77,6 +75,9 @@ $userid = $_SESSION['id'];
 
 if($_SESSION['status'] == 0)
 {
+    if(time() >= $END_TIME) {
+        die("<script>window.location='ready.php'</script>");
+    }
     $_SESSION['status'] = 1;
     $timestamp = time()+15*60-1;
     $_SESSION['end_time'] = date("Y-m-d H:i:s", $timestamp);

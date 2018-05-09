@@ -36,7 +36,7 @@ function myrev($str)
 
 function uglify($str, $ano, $using_a_tag = true)
 {
-    $str = htmlspecialchars($str);
+//    $str = htmlspecialchars($str);
     $len = mb_strlen($str); $len2 = mb_strlen($ano);
     $ret = "";
     $pos = [-1];
@@ -49,7 +49,7 @@ function uglify($str, $ano, $using_a_tag = true)
     foreach($pos as $i => $p)
     {
         if($i==0)   continue;
-        $ret .= mb_substr($str, $pos[$i-1]+1, $p-$pos[$i-1]);
+        $ret .= htmlspecialchars(mb_substr($str, $pos[$i-1]+1, $p-$pos[$i-1]));
         $randpos = rand(0, $len2-1);
         switch(rand(1, $using_a_tag ? 3 : 2))
         {
@@ -66,7 +66,7 @@ function uglify($str, $ano, $using_a_tag = true)
                 $tail = "</a>";
                 break;
         }
-        $ret .= $head . myrev(mb_substr($ano, $randpos, min(rand(3, 5), $len2-$randpos))) . $tail;
+        $ret .= $head . htmlspecialchars(myrev(mb_substr($ano, $randpos, min(rand(3, 5), $len2-$randpos)))) . $tail;
     }
     return $ret;
 }
@@ -98,7 +98,7 @@ $pids = explode(',', $problems);
 $arr = [];
 foreach ($pids as $key => $val){
     $p = $dbh->query("SELECT * FROM problems WHERE id = $val")->fetch();
-    $p['choices'] = explode("||", htmlspecialchars($p['choices']));
+    $p['choices'] = explode("||", $p['choices']);
     array_push($arr, $p);
 }
 

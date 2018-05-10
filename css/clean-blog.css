@@ -172,7 +172,7 @@ img::-moz-selection {
 }
 
 header.masthead {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   background: no-repeat center center;
   background-color: #868e96;
   background-attachment: scroll;
@@ -427,4 +427,10 @@ msk, .hid{
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
+}
+
+@media only screen and (max-width:768px){
+  header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
+    padding: 120px 0 60px;
+  }
 }

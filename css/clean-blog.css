@@ -410,7 +410,12 @@ footer .copyright {
 }
 
 msk, .hid{
-  display: none;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin-left: -1px;
+  margin-top: -1px;
+  overflow: hidden;
 }
 
 .btn-primary {

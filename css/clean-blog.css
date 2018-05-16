@@ -403,12 +403,6 @@ footer .copyright {
   font-family: 'Open Sans', 'Microsoft Yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.pb{
-  -moz-user-select:none;
-  -webkit-user-select:none;
-  user-select:none;
-}
-
 msk, .hid{
   display: inline-block;
   width: 1px;

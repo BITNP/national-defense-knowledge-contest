@@ -21,7 +21,7 @@
     <link href="css/clean-blog.css" rel="stylesheet">
 </head>
 
-<body class='pb'>
+<body>
 
 <?php
 

@@ -15,12 +15,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">主页</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ready.php">答题</a>
-                    </li>
                     <?php if(isset($_SESSION['status'])){ ?>
                         <li class="nav-item">
+                            <a class="nav-link" href="ready.php">答题</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="info.php">个人中心</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="auth.php?logout=">退出登录</a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="info.php">登录</a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -44,7 +51,7 @@
                 <div class="site-heading">
                     <span class="subheading">北京理工大学第一届</span>
                     <h1>国防知识竞赛</h1>
-                    <span class="subheading">2018 年 5 月</span>
+                    <span class="subheading">2018 年 8 月</span>
                 </div>
             </div>
         </div>

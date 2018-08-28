@@ -3,6 +3,7 @@ date_default_timezone_set("PRC");
 require_once 'CAS/CAS.php';
 require_once 'config.php';
 require_once 'control/log.php';
+require_once 'control/PaperManager.php';
 
 phpCAS::setDebug();
 phpCAS::setVerbose(true);
@@ -32,27 +33,15 @@ try{
     {
         //new user
         //random select problems
-        $p1 = $dbh->query("SELECT * FROM problems WHERE type = 1 ORDER by rand() limit $cnt_choose");
-        $problems = [];
-        $keyans = [];
-        foreach ($p1 as $row){
-            array_push($problems, $row['id']);
-            array_push($keyans, $row['answer']);
-        }
-        $p1 = $dbh->query("SELECT * FROM problems WHERE type = 0 ORDER by rand() limit $cnt_judge");
-        foreach ($p1 as $row)
-        {
-            array_push($problems, $row['id']);
-            array_push($keyans, $row['answer']);
-        }
-        $problems = implode(',', $problems);
-        $keyans = implode(',', $keyans);
+        $res = PaperManager::generate_problems();
+        $problems = $res[0];
+        $keyans = $res[1];
 
         $school = phpCAS::getAttribute('eduPersonOrgDN');
         $cname = phpCAS::getAttribute('cn');
         $stuNum = phpCAS::getAttribute('uid');
 
-        $SQL = "INSERT INTO users(casid, name, stuNum, school, status, problems, keyans) VALUES('$CASid', '$cname', '$stuNum', '$school', 0, '$problems', '$keyans')";
+        $SQL = "INSERT INTO users(casid, name, stuNum, school, status, problems, keyans) VALUES('$CASid', '$cname', '$stuNum', '$school', 2, '$problems', '$keyans')";
 
         $dbh->exec($SQL);
     }

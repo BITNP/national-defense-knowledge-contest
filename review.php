@@ -32,13 +32,26 @@
 <body>
 
 <?php
-//if(!isset($_SESSION['online']))
-//    die("<script>window.location = 'signup.php'</script>");
-
-$userid = $_SESSION['id'];
-//$userid = 1;
-
 if($_SESSION['status'] != 2){
+    die("<script>window.location='index.php'</script>");
+}
+$userid = $_SESSION['id'];
+if(!isset($_GET['id'])){
+    die("<script>window.location='index.php'</script>");
+}
+$pid = $_GET['id']; //paper ID
+if(!(is_numeric($pid) && is_int($pid + 0))){
+    die("<script>window.location='index.php'</script>");
+}
+$res = $dbh->query("SELECT * FROM papers WHERE id = $pid");
+if(!$res){
+    die("<script>window.location='index.php'</script>");
+}
+$res = $res->fetch();
+if(!$res){
+    die("<script>window.location='index.php'</script>");
+}
+if($res['userid'] != $userid){
     die("<script>window.location='index.php'</script>");
 }
 
@@ -48,8 +61,9 @@ $name = $_SESSION['name'];
 $end_time = $_SESSION['end_time'];
 //$end_time = date("Y-m-d H:i:s", time()+10000);
 
-$col = $dbh->query("SELECT * FROM users WHERE id = $userid")->fetch();
-$problems = $col['problems'];
+//$col = $dbh->query("SELECT * FROM users WHERE id = $userid")->fetch();
+//$problems = $col['problems'];
+$problems = $res['problems'];
 $pids = explode(',', $problems);
 $arr = [];
 foreach ($pids as $key => $val){
@@ -57,15 +71,15 @@ foreach ($pids as $key => $val){
     $p['choices'] = explode("||", htmlspecialchars($p['choices']));
     array_push($arr, $p);
 }
-if($col['score'] == NULL){
+if($res['score'] == NULL){
     $score = '未交卷';
-    $col['myans'] = [];
+    $res['myans'] = [];
     foreach ($pids as $v){
-        array_push($col['myans'], -1);
+        array_push($res['myans'], -1);
     }
-    $col['myans'] = implode('#', $col['myans']);
+    $res['myans'] = implode('#', $res['myans']);
 }else{
-    $score = $col['score'];
+    $score = $res['score'];
 }
 
 $page_title = "查看答卷 - " . $name;
@@ -124,8 +138,8 @@ include 'header.php';
 require 'footer.html'
 ?>
 <script>
-    var datakey = '<?=$col['keyans']?>';
-    var datamy = '<?=$col['myans']?>';
+    var datakey = '<?=$res['keyans']?>';
+    var datamy = '<?=$res['myans']?>';
     var keyans = datakey.split(',');
     var myans = datamy.split('#');
 

@@ -71,20 +71,47 @@ function uglify($str, $ano, $using_a_tag = true)
     return $ret;
 }
 
-$userid = $_SESSION['id'];
+if(!isset($_SERVER['HTTP_REFERER']) || !strrpos($_SERVER['HTTP_REFERER'], "ready.php")){
+    die("<script>window.location='ready.php'</script>");
+}
 
-if($_SESSION['status'] == 0)
+$userid = $_SESSION['id'];
+$tried = PaperManager::get_paper_count($userid);
+
+if($_SESSION['status'] == 2)
 {
+    //活动结束
+    $msg = "";
     if(time() >= $END_TIME) {
-        die("<script>window.location='ready.php'</script>");
+        $msg = "活动已经结束！";
+    }else if($tried >= $CHANCE){
+        $msg = "每人只有 $CHANCE 次答题机会！";
+    }
+    if($msg != ""){
+        die("
+            <script src='vendor/jquery/jquery.min.js'></script>
+            <script src='layer/layer.js'></script>
+            <script>
+                layer.alert('$msg', {
+                    icon : 2,
+                    title : 'Error' ,
+                    scrollbar : false,
+                    btn : ['返回首页'],
+                    closeBtn : false,
+                    yes : function() {
+                        window.location = 'index.php';
+                    }
+                });
+            </script>
+        ");
     }
     $_SESSION['status'] = 1;
     $timestamp = time()+15*60-1;
     $_SESSION['end_time'] = date("Y-m-d H:i:s", $timestamp);
-    $dbh->query("UPDATE users SET status = 1 WHERE id = $userid");
-    $dbh->query("UPDATE users SET end_time = '" . date("Y-m-d H:i:s", $timestamp+1) . "' where id = $userid");
-}else if($_SESSION['status'] == 2){
-    die("<script>window.location='review.php'</script>");
+    $end_time = date("Y-m-d H:i:s", $timestamp+1);
+    $res = PaperManager::generate_problems();
+    $problems = $res[0]; $keyans = $res[1];
+    $dbh->query("UPDATE users SET status = 1, end_time = '$end_time', problems = '$problems', keyans = '$keyans' WHERE id = $userid");
 }
 
 $name = $_SESSION['name'];

@@ -18,6 +18,13 @@
 require '../config.php';
 require_once 'log.php';
 
+if(!isset($_SERVER['HTTP_REFERER']) || !strrpos($_SERVER['HTTP_REFERER'], "paper.php")){
+    die(json_encode([
+        'success' => false,
+        'err_message' => 'hhh'
+    ]));
+}
+
 date_default_timezone_set("PRC");
 session_start();
 
@@ -45,8 +52,8 @@ try{
     if(!$res){
         throw new Exception("SQL Error 0x001, error message \r\n" . $dbh->errorInfo()[2]);
     }
-    $keys = $res->fetch()[0];
-    $keys = explode(',', $keys);
+    $keyans = $res->fetch()[0];
+    $keys = explode(',', $keyans);
 }catch (Exception $e){
     Log::write("judger.php\r\n" . $e->getMessage());
     die(json_encode([
@@ -58,6 +65,9 @@ try{
 if(strtotime($_SESSION['end_time']) < time()){
     $_SESSION['status'] = 2;
     $dbh->query("UPDATE users SET status = 2 WHERE id = $userid");
+    $problems = $dbh->query("SELECT problems FROM users WHERE id = $userid")->fetch()[0];
+    $end_time = $_SESSION['end_time'];
+    $dbh->exec("INSERT INTO papers (userid, problems, keyans, end_time) VALUES($userid, '$problems', '$keyans', '$end_time')");
     die(json_encode([
         'success' => false,
         'err_message' => '答题已经截止'
@@ -90,10 +100,21 @@ foreach ($keys as $i => $key) {
     }
 }
 
-$dbh->query("UPDATE users SET score = $score WHERE id = $userid");
+$res = $dbh->query("SELECT problems,score FROM users where id = $userid")->fetch();
+$problems = $res[0];
+$mxscore = max($res[1], $score);
+$myans = $_POST['answer'];
+$end_time = date("Y-m-d H:i:s", time());
+
+$SQL = "INSERT INTO papers (userid, problems, keyans, myans, score, end_time) VALUES($userid, '$problems', '$keyans', '$myans', $score, '$end_time')";
+$dbh->exec($SQL);
+//echo($SQL);
+
+
+$dbh->query("UPDATE users SET score = $mxscore WHERE id = $userid");
 $dbh->query("UPDATE users SET status = 2 WHERE id = $userid");
-$dbh->query("UPDATE users SET end_time = '" . date("Y-m-d H:i:s", time()) . "' WHERE id = $userid");
-$dbh->query("UPDATE users SET myans = '" . $_POST['answer'] . "' where id = $userid");
+//$dbh->query("UPDATE users SET end_time = '" .  . "' WHERE id = $userid");
+//$dbh->query("UPDATE users SET myans = '" . $_POST['answer'] . "' where id = $userid");
 $_SESSION['status'] = 2;
 
 echo json_encode([

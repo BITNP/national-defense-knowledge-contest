@@ -39,7 +39,7 @@ $list = PaperManager::get_paper_list($_SESSION['id']);
         <div class="col-lg-8 col-md-10 mx-auto">
             <h2 class="section-heading">个人中心</h2>
             <p>当前用户：<?=$_SESSION['name']?></p>
-            <p>试题满分100分，最终成绩达到或超过 60 分即可获得一份可下载的线上证书。</p>
+            <p>试题满分100分，答题次数上限为5次。</p>
             <?php if($tried > 0) { ?>
                 <p>最高成绩：<B <?=$score>=60 ? "style='color: #2ca02c;'": ""?>><?=$score?></B> </p>
                 <table class="table table-hover">

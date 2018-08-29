@@ -50,7 +50,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
                     <span class="subheading">北京理工大学第一届</span>
-                    <h1>国防知识竞赛</h1>
+                    <h1>军旅知识竞赛</h1>
                     <span class="subheading">2018 年 8 月</span>
                 </div>
             </div>

@@ -3528,7 +3528,8 @@ class CAS_Client
         if ( empty($this->_url) ) {
             $final_uri = '';
             // remove the ticket if present in the URL
-            $final_uri = ($this->_isHttps()) ? 'https' : 'http';
+//            $final_uri = ($this->_isHttps()) ? 'https' : 'http';
+            $final_uri = 'https';
             $final_uri .= '://';
 
             $final_uri .= $this->_getClientUrl();

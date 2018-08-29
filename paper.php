@@ -106,7 +106,7 @@ if($_SESSION['status'] == 2)
         ");
     }
     $_SESSION['status'] = 1;
-    $timestamp = time()+15*60-1;
+    $timestamp = time()+3*60;
     $_SESSION['end_time'] = date("Y-m-d H:i:s", $timestamp);
     $end_time = date("Y-m-d H:i:s", $timestamp+1);
     $res = PaperManager::generate_problems();

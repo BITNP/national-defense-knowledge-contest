@@ -196,7 +196,7 @@ require 'footer.html'
 <script>
     var pcnt = <?=$cnt_judge+$cnt_choose?>;
 </script>
-<script src="js/paper.min.js"></script>
+<script src="js/paper.js"></script>
 
 </body>
 

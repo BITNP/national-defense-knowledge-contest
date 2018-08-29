@@ -1,4 +1,6 @@
 ﻿<?php
+date_default_timezone_set("PRC");
+
 //database configuration
 $db_host        = "localhost";
 $db_username    = "root";

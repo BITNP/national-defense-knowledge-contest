@@ -91,7 +91,7 @@ include 'header.php';
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>答题时间： <B><?=$end_time?></B> ，成绩： <B><?=$score?></B></p>
-            <a href="certificate/" target="_blank">下载合格证书</a>
+<!--            <a href="certificate/" target="_blank">下载合格证书</a>-->
             <hr/>
 
             <div id="main">

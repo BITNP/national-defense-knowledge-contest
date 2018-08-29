@@ -78,7 +78,7 @@ $list = PaperManager::get_paper_list($_SESSION['id']);
                 </table>
             <?php } ?>
             <a href="ready.php" class="btn btn-primary">前往答题</a>
-            <a href="certificate/" target="_blank" class="btn btn-primary">下载合格证书</a>
+<!--            <a href="certificate/" target="_blank" class="btn btn-primary">下载合格证书</a>-->
         </div>
     </div>
 </div>

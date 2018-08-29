@@ -7,7 +7,6 @@ require_once 'control/PaperManager.php';
 phpCAS::setDebug();
 phpCAS::setVerbose(true);
 phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_uri);
-phpCAS::setFixedServiceURL('https://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']);
 phpCAS::setNoCasServerValidation();
 phpCAS::forceAuthentication();
 if (isset($_REQUEST['logout'])) {

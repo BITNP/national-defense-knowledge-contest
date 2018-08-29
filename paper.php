@@ -136,7 +136,7 @@ include 'header.php';
 
 <div id="result" style="display: none; padding-left: 15px; padding-right: 15px;">
     <p>交卷成功！</p>
-    <p>您的得分是 <strong><span id="score">-99</span></strong>，成绩高于 60 分可到个人中心下载证书</p>
+    <p>您的得分是 <strong><span id="score">-99</span></strong>.</p>
 </div>
 
 <!-- Main Content -->
@@ -144,7 +144,7 @@ include 'header.php';
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>你好，<?=$name?></p>
-            <p>你将有 15 分钟时间答题，<?=$end_time?> 停止交卷，还剩 <span class="navbar_time"></span> </p>
+            <p>你将有 3 分钟时间答题，<?=$end_time?> 停止交卷，还剩 <span class="navbar_time"></span> </p>
             <hr/>
 
             <input style="display: none" id='timer' value=<?=strtotime($end_time)?> />

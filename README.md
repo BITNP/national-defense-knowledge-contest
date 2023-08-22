@@ -6,8 +6,6 @@ Bootstrap v4.0.0
 
 MySQL
 
-测试： http://123.206.78.69/gf/ （外网）
-
 ​     
 
 
